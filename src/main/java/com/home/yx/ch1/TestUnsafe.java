@@ -22,6 +22,8 @@ public class TestUnsafe {
     public static void main(String[] args) {
         TestUnsafe testUnsafe = new TestUnsafe();
         Boolean sucess = unsafe.compareAndSwapInt(testUnsafe, stateOffset, 0, 1);
+        unsafe.getAndAddLong(testUnsafe, stateOffset, 1L);
+        System.out.println(testUnsafe.state);
         System.out.println(sucess);
     }
 }
